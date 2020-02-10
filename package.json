@@ -17,7 +17,9 @@
   ],
   "author": "Raphael Karanja <raphaelndauwa@gmail.com>",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "ejs": "^3.0.1"
+  },
   "devDependencies": {
     "@types/express": "^4.17.2",
     "@types/node": "^13.7.0",
