@@ -2,10 +2,13 @@
   "name": "kafka-producer-app",
   "version": "1.0.0",
   "description": "A node express application for producing kafka messages",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ."
+    "start": "node .",
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "npm run build"
   },
   "keywords": [
     "Kafka",
