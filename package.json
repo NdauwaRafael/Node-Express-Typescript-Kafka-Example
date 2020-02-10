@@ -18,7 +18,9 @@
   "author": "Raphael Karanja <raphaelndauwa@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^3.0.1"
+    "ejs": "^3.0.1",
+    "kafka-node": "^5.0.0",
+    "sequelize": "^5.21.4"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
