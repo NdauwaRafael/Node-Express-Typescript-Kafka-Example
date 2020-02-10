@@ -34,3 +34,4 @@ class HomeController implements IControllerBase {
         res.render('home/index', { users })
     }
 }
+export default HomeController
