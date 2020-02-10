@@ -1,5 +1,6 @@
 import express from 'express'
 import { Application } from 'express'
+import {db} from "./app/helpers/database";
 
 class App {
     public app: Application;
@@ -13,6 +14,7 @@ class App {
         this.routes(appInit.controllers);
         this.assets();
         this.template();
+        this.syncDb();
     }
 
     private middlewares(middleWares: { forEach: (arg0: (middleWare: any) => void) => void; }) {
@@ -40,6 +42,10 @@ class App {
         this.app.listen(this.port, () => {
             console.log(`App listening on the http://localhost:${this.port}`)
         })
+    }
+
+    public syncDb(){
+        db.sync();
     }
 }
 
