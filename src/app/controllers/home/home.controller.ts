@@ -19,15 +19,15 @@ class HomeController implements IControllerBase {
         const users = [
             {
                 id: 1,
-                name: 'Ali'
+                name: 'John Doe'
             },
             {
                 id: 2,
-                name: 'Can'
+                name: 'Jane DOe'
             },
             {
                 id: 3,
-                name: 'Ahmet'
+                name: 'Hally'
             }
         ];
 
