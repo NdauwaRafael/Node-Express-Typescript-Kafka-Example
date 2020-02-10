@@ -1,6 +1,7 @@
 import express from 'express'
 import { Application } from 'express'
 import {db} from "./app/helpers/database";
+import {kafkaSubscribe} from "./app/helpers/kafka/kafka.subscribe.listener.helper";
 
 class App {
     public app: Application;
@@ -15,6 +16,7 @@ class App {
         this.assets();
         this.template();
         this.syncDb();
+        this.subscribeKafka();
     }
 
     private middlewares(middleWares: { forEach: (arg0: (middleWare: any) => void) => void; }) {
@@ -46,6 +48,10 @@ class App {
 
     public syncDb(){
         db.sync();
+    }
+
+    public subscribeKafka(){
+        kafkaSubscribe();
     }
 }
 
