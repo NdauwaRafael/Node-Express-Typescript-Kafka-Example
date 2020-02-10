@@ -1,0 +1,20 @@
+{
+  "name": "kafka-producer-app",
+  "version": "1.0.0",
+  "description": "A node express application for producing kafka messages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Kafka",
+    "Node",
+    "Express",
+    "Typescript"
+  ],
+  "author": "Raphael Karanja <raphaelndauwa@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
