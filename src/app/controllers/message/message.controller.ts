@@ -1,6 +1,6 @@
 import IControllerBase from "../interfaces/IControllerBase.interface";
 import express, {Request, Response} from "express";
-import { KafkaClient as Client } from 'kafka-node';
+import { KafkaClient as Client, Producer, ProduceRequest } from 'kafka-node';
 
 
 class MessageController implements IControllerBase{
