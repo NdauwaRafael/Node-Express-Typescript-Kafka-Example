@@ -20,10 +20,15 @@ class MessageController implements IControllerBase{
 
     };
 
-    public async save (message: any) {
-        await Message.create({
-            name: message
-        })
+    public async save (message: string) {
+        try {
+            await Message.create({
+                name: message
+            })
+        }
+        catch (e) {
+            console.log(e, 'error saving message')
+        }
     }
 }
 
