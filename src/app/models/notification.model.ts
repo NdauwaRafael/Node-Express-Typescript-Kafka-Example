@@ -1,7 +1,7 @@
 import { Sequelize, Model, DataTypes, BuildOptions } from 'sequelize';
 import {db} from "../helpers/database";
 
-class Notification extends Model {
+class NotificationModel extends Model {
     public id!: number;
     public title!: string;
     public message!: string | null;
@@ -11,11 +11,14 @@ class Notification extends Model {
     public readonly updatedAt!: Date;
 }
 
-Notification.init({
+NotificationModel.init({
     id: {
         type: DataTypes.INTEGER.UNSIGNED,
         autoIncrement: true,
         primaryKey: true,
+    },
+    alien_id: {
+        type: DataTypes.INTEGER,
     },
     title: {
         type: new DataTypes.STRING(128),
@@ -30,4 +33,4 @@ Notification.init({
     sequelize: db, // this bit is important
 });
 
-export default Notification;
+export default NotificationModel;

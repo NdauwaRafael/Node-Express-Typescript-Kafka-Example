@@ -1,5 +1,6 @@
 import IControllerBase from "../interfaces/IControllerBase.interface";
 import express, {Request, Response} from "express";
+import NotificationModel from "../../models/notification.model";
 
 export default class NotificationController implements IControllerBase {
     public path = '/';
@@ -18,6 +19,21 @@ export default class NotificationController implements IControllerBase {
     };
 
     public async save(messages: any) {
-        console.log(messages)
+        try {
+            const messages_passes = JSON.parse(messages);
+            let savedMessages = await NotificationModel.bulkCreate(messages_passes, {
+                returning: true,
+                updateOnDuplicate: ["title", "message"]
+            });
+
+            console.log("Messages have been updated successfully");
+            
+            return {
+                message: "Saved",
+            }
+        }
+        catch (e) {
+
+        }
     }
 }

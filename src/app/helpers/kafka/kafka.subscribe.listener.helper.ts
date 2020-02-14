@@ -10,7 +10,6 @@ export const kafkaSubscribe: any = () => {
                 if (message){
                     const messageObj = new MessageController;
                     await messageObj.save(message.value);
-
                 }
 
             }
@@ -28,7 +27,7 @@ export const kafkaSubscribe: any = () => {
             try {
                 if (message){
                     const messageObj = new NotificationController;
-                    await messageObj.save(message.value);
+                    messageObj.save(message.value);
                 }
 
             }
